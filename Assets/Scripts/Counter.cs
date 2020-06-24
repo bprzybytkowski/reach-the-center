@@ -30,5 +30,9 @@ public class Counter : MonoBehaviour
         CancelInvoke();
     }
 
+    public int getSeconds() {
+        return seconds;
+    }
+
 
 }
