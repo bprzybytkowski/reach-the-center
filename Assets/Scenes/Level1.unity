@@ -704,10 +704,45 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 274801932}
     m_Modifications:
+    - target: {fileID: 5355791972079578848, guid: 28b356a00d8151e4e9dd2353af6f3e70,
+        type: 3}
+      propertyPath: m_CullTransparentMesh
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5355791972079578849, guid: 28b356a00d8151e4e9dd2353af6f3e70,
+        type: 3}
+      propertyPath: m_Maskable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5355791972079578849, guid: 28b356a00d8151e4e9dd2353af6f3e70,
+        type: 3}
+      propertyPath: m_RaycastTarget
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5355791972079578849, guid: 28b356a00d8151e4e9dd2353af6f3e70,
+        type: 3}
+      propertyPath: m_FontData.m_BestFit
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5355791972079578849, guid: 28b356a00d8151e4e9dd2353af6f3e70,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5355791972079578852, guid: 28b356a00d8151e4e9dd2353af6f3e70,
         type: 3}
       propertyPath: m_Name
       value: LeftButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 5355791972079578852, guid: 28b356a00d8151e4e9dd2353af6f3e70,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5355791972079578854, guid: 28b356a00d8151e4e9dd2353af6f3e70,
+        type: 3}
+      propertyPath: m_Interactable
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5355791972079578855, guid: 28b356a00d8151e4e9dd2353af6f3e70,
         type: 3}
