@@ -6,19 +6,20 @@ public class CameraColorShift : MonoBehaviour {
     [SerializeField] Color startColor;
     [SerializeField] Color endColor;
 
-    private float t = 0;
     private new Camera camera;
-    Color lerpedColor;
 
     private void Awake() {
         camera = GetComponent<Camera>();
+        StartCoroutine(ShiftOverTime(GameObject.FindObjectOfType<Counter>().getSeconds()));
     }
 
-    void Update() {
-        lerpedColor = Color.Lerp(startColor, endColor, t);
-        if (t < 1) {
-            t += Time.deltaTime / GameObject.FindObjectOfType<Counter>().getSeconds();
-        }
-        camera.backgroundColor = lerpedColor;
+    IEnumerator ShiftOverTime(float time) {
+        float currentTime = 0.0f;
+
+        do {
+            camera.backgroundColor = Color.Lerp(startColor, endColor, currentTime / time);
+            currentTime += Time.deltaTime;
+            yield return null;
+        } while (currentTime <= time);
     }
 }

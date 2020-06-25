@@ -15,7 +15,6 @@ public class ButtonHandler : MonoBehaviour {
         player.SetControlThrow(-1);
     }
     public void onPointerUpMoveLeft() {
-        player.SetControlThrow(0);
         player.SetControlledByTouch(false);
     }
     public void onPointerDownMoveRight() {
@@ -23,7 +22,6 @@ public class ButtonHandler : MonoBehaviour {
         player.SetControlThrow(1);
     }
     public void onPointerUpMoveRight() {
-        player.SetControlThrow(0);
         player.SetControlledByTouch(false);
     }
     public void Shoot() {
