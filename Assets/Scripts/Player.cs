@@ -9,6 +9,7 @@ public class Player : MonoBehaviour {
     [SerializeField] float rotateSpeed = 200f;
     [SerializeField] float shootSpeed = 10f;
 
+    bool controlledByTouch = false;
     bool canRotate = true;
     bool canShoot = true;
     float controlThrow = 0f;
@@ -22,11 +23,11 @@ public class Player : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        if (canRotate) {
+        if (canRotate && !controlledByTouch) {
             controlThrow = CrossPlatformInputManager.GetAxis("Horizontal");
         }
         transform.RotateAround(Vector3.zero, Vector3.forward, controlThrow * Time.fixedDeltaTime * -rotateSpeed);
-        if (CrossPlatformInputManager.GetButtonDown("Jump") && canShoot) {
+        if (CrossPlatformInputManager.GetButtonDown("Jump")) {
             Shoot();
         }
     }
@@ -37,13 +38,15 @@ public class Player : MonoBehaviour {
         rb.angularVelocity = 0;
     }
 
-    void Shoot() {
-        canRotate = false;
-        canShoot = false;
-        StopMoving();
-        rb.velocity = Vector2.zero;
-        Vector3 shootDirection = (Vector3.zero - rb.transform.position).normalized;
-        rb.velocity = shootDirection * shootSpeed;
+    public void Shoot() {
+        if (canShoot) {
+            canRotate = false;
+            canShoot = false;
+            StopMoving();
+            rb.velocity = Vector2.zero;
+            Vector3 shootDirection = (Vector3.zero - rb.transform.position).normalized;
+            rb.velocity = shootDirection * shootSpeed;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
@@ -61,6 +64,16 @@ public class Player : MonoBehaviour {
 
     private void RestartLevel() {
         FindObjectOfType<GameSession>().ProcessLostLive();
+    }
+
+    public void SetControlledByTouch(bool controlledByTouch) {
+        this.controlledByTouch = controlledByTouch;
+    }
+
+    public void SetControlThrow(float controlThrow) {
+        if (canRotate) {
+            this.controlThrow = controlThrow;
+        }
     }
 
 }
