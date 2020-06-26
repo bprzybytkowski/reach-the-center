@@ -1,8 +1,6 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Counter : MonoBehaviour {
     [SerializeField] int seconds;
@@ -28,7 +26,7 @@ public class Counter : MonoBehaviour {
         } else {
             counter.transform.localScale = grownText;
             StopCounting();
-            FindObjectOfType<GameSession>().ProcessLostLive();
+            FindObjectOfType<GameSession>().ProcessRetry();
         }
     }
 

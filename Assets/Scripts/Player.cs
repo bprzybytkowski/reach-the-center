@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.SceneManagement;
+﻿using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 
 public class Player : MonoBehaviour {
@@ -54,16 +51,12 @@ public class Player : MonoBehaviour {
             StopMoving();
             FindObjectOfType<CameraShake>().StartShake(-1);
             FindObjectOfType<Counter>().StopCounting();
-            RestartLevel();
+            FindObjectOfType<GameSession>().ProcessRetry();
         }
         if (other.gameObject.layer == LayerMask.NameToLayer("Center")) {
             StopMoving();
             rb.transform.position = Vector3.zero;
         }
-    }
-
-    private void RestartLevel() {
-        FindObjectOfType<GameSession>().ProcessLostLive();
     }
 
     public void SetControlledByTouch(bool controlledByTouch) {

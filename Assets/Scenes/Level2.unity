@@ -607,7 +607,7 @@ PrefabInstance:
     - target: {fileID: 2485118043070527173, guid: 133e4b2253d853a498f77e538a82edfc,
         type: 3}
       propertyPath: m_Name
-      value: Main Camera (1)
+      value: MainCamera (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 133e4b2253d853a498f77e538a82edfc, type: 3}
@@ -638,10 +638,20 @@ PrefabInstance:
       propertyPath: m_textInfo.pageCount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6277656455720294410, guid: 2f7a9e75ced11ba44b58bb9e4ebcdf96,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6277656456016994820, guid: 2f7a9e75ced11ba44b58bb9e4ebcdf96,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6277656456289085081, guid: 2f7a9e75ced11ba44b58bb9e4ebcdf96,
         type: 3}
       propertyPath: m_Name
-      value: Canvas (1)
+      value: ControlCanvas (1)
       objectReference: {fileID: 0}
     - target: {fileID: 6277656456289085085, guid: 2f7a9e75ced11ba44b58bb9e4ebcdf96,
         type: 3}
@@ -747,6 +757,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6277656456466140459, guid: 2f7a9e75ced11ba44b58bb9e4ebcdf96,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f7a9e75ced11ba44b58bb9e4ebcdf96, type: 3}

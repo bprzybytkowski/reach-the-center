@@ -3,11 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameSession : MonoBehaviour
-{
-
-    [SerializeField] int lives = 3;
-    [SerializeField] float liveLostDelay = 0.5f;
+public class GameSession : MonoBehaviour {
+    [SerializeField] float retryDelay = 0.5f;
     [SerializeField] float sessionResetDelay = 1f;
 
     private void Awake() {
@@ -19,21 +16,17 @@ public class GameSession : MonoBehaviour
         }
     }
 
-    public void ProcessLostLive() {
+    public void ProcessRetry() {
         Circle[] circles = FindObjectsOfType<Circle>();
         foreach (Circle circle in circles) {
             circle.StopSpinning();
         }
-        if (lives > 1) {
-            StartCoroutine(TakeLife());
-        } else {
-            StartCoroutine(ResetGameSession());
-        }
+        StartCoroutine(Retry());
+        //StartCoroutine(ResetGameSession());
     }
 
-    IEnumerator TakeLife() {
-        yield return new WaitForSeconds(liveLostDelay);
-        lives--;
+    IEnumerator Retry() {
+        yield return new WaitForSeconds(retryDelay);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
