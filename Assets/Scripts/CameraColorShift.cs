@@ -13,7 +13,7 @@ public class CameraColorShift : MonoBehaviour {
         StartCoroutine(ShiftOverTime(GameObject.FindObjectOfType<Counter>().getSeconds()));
     }
 
-    IEnumerator ShiftOverTime(float time) {
+    public IEnumerator ShiftOverTime(float time) {
         float currentTime = 0.0f;
 
         do {

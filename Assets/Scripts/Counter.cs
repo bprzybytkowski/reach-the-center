@@ -26,7 +26,7 @@ public class Counter : MonoBehaviour {
         } else {
             counter.transform.localScale = grownText;
             StopCounting();
-            FindObjectOfType<GameSession>().ProcessLostLive();
+            FindObjectOfType<GameSession>().ProcessLostLife();
         }
     }
 

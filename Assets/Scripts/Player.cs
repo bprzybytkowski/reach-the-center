@@ -51,7 +51,7 @@ public class Player : MonoBehaviour {
             StopMoving();
             FindObjectOfType<CameraShake>().StartShake(-1);
             FindObjectOfType<Counter>().StopCounting();
-            FindObjectOfType<GameSession>().ProcessLostLive();
+            FindObjectOfType<GameSession>().ProcessLostLife();
         }
         if (other.gameObject.layer == LayerMask.NameToLayer("Center")) {
             StopMoving();

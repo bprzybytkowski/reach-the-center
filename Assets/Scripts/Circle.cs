@@ -32,7 +32,7 @@ public class Circle : MonoBehaviour {
 
     private void Update() {
         if (isSpinning) {
-        Rotate();
+            Rotate();
         }
     }
 
