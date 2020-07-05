@@ -4,13 +4,13 @@ using UnityEngine;
 [RequireComponent(typeof(LineRenderer))]
 public class Circle : MonoBehaviour {
     [SerializeField] int segments;
-    [SerializeField] float xRadius;
-    [SerializeField] float yRadius;
     [SerializeField] float angle;
     [SerializeField] float cutOut;
     [SerializeField] Color color;
     [SerializeField] float rotateSpeed;
-
+    [SerializeField] Radius radius;
+    float xRadius;
+    float yRadius;
     LineRenderer line;
     float lineWidth;
     EdgeCollider2D edgeCollider2D;
@@ -18,6 +18,29 @@ public class Circle : MonoBehaviour {
     bool isSpinning = true;
 
     void Start() {
+        switch (radius) {
+            case Radius.Tiny:
+                xRadius = 0.26f;
+                yRadius = 0.26f;
+                break;
+            case Radius.Small:
+                xRadius = 0.58f;
+                yRadius = 0.58f;
+                break;
+            case Radius.Medium:
+                xRadius = 0.9f;
+                yRadius = 0.9f;
+                break;
+            case Radius.Large:
+                xRadius = 1.22f;
+                yRadius = 1.22f;
+                break;
+            case Radius.Huge:
+                xRadius = 1.54f;
+                yRadius = 1.54f;
+                break;
+        }
+
         line = gameObject.GetComponent<LineRenderer>();
         lineWidth = line.endWidth;
         edgeCollider2D = gameObject.GetComponent<EdgeCollider2D>();
@@ -30,7 +53,7 @@ public class Circle : MonoBehaviour {
         CreatePoints();
     }
 
-    private void Update() {
+    private void FixedUpdate() {
         if (isSpinning) {
             Rotate();
         }
@@ -70,4 +93,8 @@ public class Circle : MonoBehaviour {
     public void StopSpinning() {
         isSpinning = false;
     }
+}
+
+public enum Radius {
+    Tiny, Small, Medium, Large, Huge
 }
