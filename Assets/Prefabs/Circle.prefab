@@ -143,12 +143,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   segments: 50
-  xRadius: 1.5
-  yRadius: 1.5
-  angle: 0
-  cutOut: 60
-  color: {r: 1, g: 0.6988637, b: 0, a: 1}
+  angle: 90
+  cutOut: 120
+  color: {r: 1, g: 0.41037738, b: 0.6938905, a: 1}
   rotateSpeed: 10
+  radius: 4
+  lineWidth: 0.1
 --- !u!68 &9108007735862153395
 EdgeCollider2D:
   m_ObjectHideFlags: 0

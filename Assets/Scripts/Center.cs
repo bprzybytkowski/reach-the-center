@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using UnityEngine;
-using UnityEngine.SceneManagement;
+﻿using UnityEngine;
 
 public class Center : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D other) {

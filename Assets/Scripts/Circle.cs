@@ -3,46 +3,29 @@ using UnityEngine;
 
 [RequireComponent(typeof(LineRenderer))]
 public class Circle : MonoBehaviour {
-    [SerializeField] int segments;
-    [SerializeField] float angle;
-    [SerializeField] float cutOut;
+    [SerializeField] int segments = 50;
+    [SerializeField] float angle = 0;
+    [SerializeField] float cutOut = 0;
     [SerializeField] Color color;
-    [SerializeField] float rotateSpeed;
+    [SerializeField] float rotateSpeed = 10;
     [SerializeField] Radius radius;
+    [SerializeField] float lineWidth = 0.1f;
+    [SerializeField] bool isEnabled;
     float xRadius;
     float yRadius;
     LineRenderer line;
-    float lineWidth;
     EdgeCollider2D edgeCollider2D;
     List<Vector2> edgeColliderPoints;
     bool isSpinning = true;
 
     void Start() {
-        switch (radius) {
-            case Radius.Tiny:
-                xRadius = 0.26f;
-                yRadius = 0.26f;
-                break;
-            case Radius.Small:
-                xRadius = 0.58f;
-                yRadius = 0.58f;
-                break;
-            case Radius.Medium:
-                xRadius = 0.9f;
-                yRadius = 0.9f;
-                break;
-            case Radius.Large:
-                xRadius = 1.22f;
-                yRadius = 1.22f;
-                break;
-            case Radius.Huge:
-                xRadius = 1.54f;
-                yRadius = 1.54f;
-                break;
+        if (!isEnabled) {
+            gameObject.SetActive(false);
         }
 
         line = gameObject.GetComponent<LineRenderer>();
-        lineWidth = line.endWidth;
+        line.startWidth = lineWidth;
+        line.endWidth = lineWidth;
         edgeCollider2D = gameObject.GetComponent<EdgeCollider2D>();
         edgeColliderPoints = new List<Vector2>();
 
@@ -50,6 +33,30 @@ public class Circle : MonoBehaviour {
         line.endColor = color;
         line.positionCount = segments + 1;
         line.useWorldSpace = false;
+
+        switch (radius) {
+            case Radius.Tiny:
+                xRadius = 0.11f + (line.startWidth / 2);
+                yRadius = 0.11f + (line.startWidth / 2);
+                break;
+            case Radius.Small:
+                xRadius = 0.43f + (line.startWidth / 2);
+                yRadius = 0.43f + (line.startWidth / 2);
+                break;
+            case Radius.Medium:
+                xRadius = 0.75f + (line.startWidth / 2);
+                yRadius = 0.75f + (line.startWidth / 2);
+                break;
+            case Radius.Large:
+                xRadius = 1.07f + (line.startWidth / 2);
+                yRadius = 1.07f + (line.startWidth / 2);
+                break;
+            case Radius.Huge:
+                xRadius = 1.39f + (line.startWidth / 2);
+                yRadius = 1.39f + (line.startWidth / 2);
+                break;
+        }
+
         CreatePoints();
     }
 
