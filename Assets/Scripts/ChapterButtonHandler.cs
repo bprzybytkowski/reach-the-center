@@ -10,6 +10,6 @@ public class ChapterButtonHandler : MonoBehaviour {
         chapterNumber = int.Parse(gameObject.name.Replace("ChapterButton", ""));
     }
     public void StartChapter() {
-        SceneManager.LoadScene(chapterNumber == 1 ? 1 : chapterNumber * 5);
+        SceneManager.LoadScene(chapterNumber == 1 ? 1 : (chapterNumber - 1) * 5 + 1);
     }
 }

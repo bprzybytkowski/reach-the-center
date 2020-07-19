@@ -266,6 +266,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1193818635005897465, guid: c6ace018f7f7f384999881e1e6e35b90,
+        type: 3}
+      propertyPath: m_text
+      value: Chapter 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1193818635763035161, guid: c6ace018f7f7f384999881e1e6e35b90,
+        type: 3}
+      propertyPath: m_text
+      value: Chapter 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2767784031876487686, guid: c6ace018f7f7f384999881e1e6e35b90,
+        type: 3}
+      propertyPath: m_Name
+      value: ChapterText2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2767784032595746022, guid: c6ace018f7f7f384999881e1e6e35b90,
+        type: 3}
+      propertyPath: m_Name
+      value: ChapterText3
+      objectReference: {fileID: 0}
     - target: {fileID: 7528138391002509299, guid: c6ace018f7f7f384999881e1e6e35b90,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -375,6 +395,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MenuCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 8587141699153307564, guid: c6ace018f7f7f384999881e1e6e35b90,
+        type: 3}
+      propertyPath: m_Name
+      value: ChapterText1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6ace018f7f7f384999881e1e6e35b90, type: 3}
